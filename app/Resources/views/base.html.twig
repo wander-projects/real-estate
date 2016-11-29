@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/fonts.googleapis.com.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/ace.min.css') }}" class="ace-main-stylesheet" id="main-ace-style" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/ace-skins.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/app/css/ace-rtl.min.css') }}" />
+        
+        <script src="{{ asset('bundles/app/js/ace-extra.min.js') }}"></script>
+        
+        <!--[if !IE]> -->
+        <script src="{{ asset('bundles/app/js/jquery-2.1.4.min.js') }}"></script>
+        <!-- <![endif]-->
+        
+        <!--[if IE]>
+        <script src="{{ asset('bundles/app/js/jquery-1.11.3.min.js') }}"></script>
+        <![endif]-->
+        
+        <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/jquery-ui.custom.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/jquery.ui.touch-punch.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/ace-elemets.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/ace.min.js') }}"></script>
+    </head>
+    <body class="no-skin">
+        {% block body %}
+            <div class="main-container ace-save-state" id="main-container"></div>
+        {% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript">
+                try{ace.settings.loadState('main-container')}catch(e){}
+            </script>
+        {% endblock %}
+    </body>
+</html>
